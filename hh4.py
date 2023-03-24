@@ -75,9 +75,9 @@ def save_to_csv(salaries, filename):
 
 
 # Define your email, password, search query, and CSV filename
-EMAIL = 'muminovamir@gmail.com'
-PASSWORD = 'A1996mir!'
-SEARCH_QUERY = 'Java Developer'
+EMAIL = 'your email'
+PASSWORD = 'password'
+SEARCH_QUERY = 'Atlassian Engineer'
 CSV_FILE = 'salaries.csv'
 
 # Initialize the WebDriver and login to hh.ru
