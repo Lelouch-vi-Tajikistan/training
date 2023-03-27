@@ -14,15 +14,15 @@ def login(driver, EMAIL, PASSWORD):
     # Find and click the login button
     login_button = driver.find_element(By.XPATH, "//a[@data-qa='login']")
     login_button.click()
-
-    # Wait for the email input field to be present and visible
-    WebDriverWait(driver, 10).until(
-        EC.visibility_of_element_located((By.XPATH, "//input[@data-qa='login-input-username']"))
-    )
     
     # Expand button to enter the password
     expand_button = driver.find_element(By.XPATH, "//button[@data-qa='expand-login-by-password']")
     expand_button.click()
+
+    # Wait for the email input field to be present and visible
+    WebDriverWait(driver, 10).until(
+        EC.visibility_of_element_located((By.XPATH, "//input[@data-qa='login-input-password']"))
+    )
 
     # Enter the email address and password
     email_input = driver.find_element(By.NAME, 'username')
@@ -31,10 +31,12 @@ def login(driver, EMAIL, PASSWORD):
 
     password_input = driver.find_element(By.XPATH, "//input[@data-qa='login-input-password']")
     password_input.send_keys(PASSWORD)
-    password_input.submit()  
+    password_input.submit()
 
-
-    
+    # Wait for the email input field to be present and visible
+    WebDriverWait(driver, 10).until(
+        EC.visibility_of_element_located((By.XPATH, "//input[@data-qa='account-login-submit']"))
+    )
 
 # Search for jobs with the provided query and area_id
 def search_jobs(query, area_id=1):
