@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart App</title>
+    <style>
+        canvas {
+            display: block;
+            margin: 0 auto;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="heartCanvas" width="500" height="500"></canvas>
+    <script>
+        const canvas = document.getElementById('heartCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Draw the heart using Bezier curves
+        ctx.beginPath();
+        ctx.moveTo(250, 200);
+        ctx.bezierCurveTo(150, 50, 50, 300, 250, 400);
+        ctx.bezierCurveTo(450, 300, 350, 50, 250, 200);
+        ctx.fillStyle = 'red';
+        ctx.fill();
+    </script>
+</body>
+</html>
